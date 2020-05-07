@@ -1,0 +1,9 @@
+@import url('./__title/news__title.css');
+@import url('./__show-more/news__show-more.css');
+
+.news {
+    background: #f5f6f7;
+    padding-top: 5.5vw;
+    display: flex;
+    flex-direction: column;
+}

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="../images/favicon.png">
+  <title>NewsExplorer</title>
+  <link rel="stylesheet" href="<%=htmlWebpackPlugin.files.chunks.secondary.css %>">
+
+</head>
+
+<body>
+  <div class="сoverpage">
+    <div class="page">
+      <!--Блок хэдер-->
+      <header class="header header_type_black">
+        <p class="header__logo">NewsExplorer</p>
+        <nav class="header__navigation">
+          <div class="header__side header__side_type_black" tabindex="1"></div>
+          <div class="header__links header__links_type_black">
+            <a class="link header__link" href="../index.html">Главная</a>
+            <a class="link header__link" href="#">Сохраненные статьи</a>
+            <button class="authorization__button">Грета <img class="authorization__image"
+                src="<%=require('../images/Exit-icon-black.png')%>" alt="Выйти"></button>
+          </div>
+        </nav>
+      </header>
+      <!--Блок приветствия пользователя-->
+      <section class="user-data">
+        <h4 class="user-data__subtitle">Сохранённые статьи</h4>
+        <h1 class="user-data__title">Грета, у вас 5 сохранённых статей</h1>
+        <h3 class="user-data__keywords">По ключевым словам: <span class="user-data__keyword">Природа, Тайга и 2
+            другим</span></h3>
+      </section>
+      <!--Сохраненные статьи пользователя-->
+      <section class="saved-news">
+        <div class="news-list">
+          <!--Пример карточки-->
+          <div class="news-card">
+            <div class="news-card__image"></div>
+            <div class="news-card__keyword">
+              <p class="news-card__keyword-text">Природа</p>
+            </div>
+            <button class="news-card__icon news-card__icon_type_delete" type="button"></button>
+            <div class="news-card__tooltip">
+              <p class="news-card__tooltip-text">Убрать из сохранённых</p>
+            </div>
+            <div class="news-card__article">
+              <span class="news-card__date">2 августа, 2019</span>
+              <h3 class="news-card__title">Национальное достояние – парки</h3>
+              <p class="news-card__text">В 2016 году Америка отмечала важный юбилей: сто лет назад здесь
+                начала складываться система национальных парков – охраняемых территорий, где и сегодня
+                каждый может приобщиться к природе.</p>
+              <p class="news-card__sourse">Лента.ру</p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!--Блок футер-->
+      <footer class="footer">
+        <p class="footer__copyright">&#169; 2020 Supersite, Powered by News API</p>
+        <nav class="footer__links">
+          <a class="link footer__link" href="#">Главная</a>
+          <a class="link footer__link" href="https://praktikum.yandex.ru/web/" target="_blank">Яндекс.Практикум</a>
+          <a class="footer__link" href="https://github.com/Mlenizyaka" target="_blank"><img class="footer__social-icon"
+              src="<%=require('../images/Vector-GH.svg')%>" alt="GitHub"></a>
+          <a class="footer__link" href="https://www.facebook.com/profile.php?id=100002918287725" target="_blank"><img
+              class="footer__social-icon" src="<%=require('../images/Vector-FB.svg')%>" alt="Facebook"></a>
+        </nav>
+      </footer>
+    </div>
+  </div>
+  <script src="<%= htmlWebpackPlugin.files.chunks.secondary.entry %>"></script>
+</body>
+
+</html>

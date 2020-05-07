@@ -1,0 +1,21 @@
+@import url('./_type_white/header__links_type_white.css');
+@import url('./_type_black/header__links_type_black.css');
+
+.header__links {
+    display: flex;
+    align-items: center;
+}
+
+@media screen and (max-width: 550px) {
+    .header__links {
+        width: 100vw;
+        position: absolute;
+        z-index: 2;
+        top: -5vw;
+        right: -5vw;
+        display: none;
+        flex-direction: column;
+        box-sizing: border-box;
+        padding-top: 15vw;
+    }
+}

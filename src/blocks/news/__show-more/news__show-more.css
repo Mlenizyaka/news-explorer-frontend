@@ -1,0 +1,43 @@
+.news__show-more {
+    margin: 4.4vw auto 5.5vw auto;
+    width: 288px;
+    height: 64px;
+    background: #fff;
+    border-radius: 80px;
+    border: none;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 1.2rem;
+    line-height: 1.5;
+    
+    color: #1a1b22;
+    transition: opacity 0.3s linear;
+}
+
+.news__show-more:hover {
+    opacity: 0.9;
+}
+
+@media screen and (max-width: 900px) {
+    .news__show-more {
+        width: 240px;
+        height: 56px;
+        margin-bottom: 5vw;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .news__show-more {
+        width: 240px;
+        height: 56px;
+        margin-bottom: 5vw;
+    }
+}
+
+@media screen and (max-width: 550px) {
+    .news__show-more {
+        width: 288px;
+        margin-bottom: 32px;
+    }
+}
