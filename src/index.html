@@ -4,22 +4,24 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="icon" href="./images/favicon.png">
+  <link rel="icon" href="<%=require('./images/favicon.png')%">
   <title>NewsExplorer</title>
   <link rel="stylesheet" href="<%=htmlWebpackPlugin.files.chunks.main.css %>">
 
 </head>
 
 <body>
+  <!--
+<body>
   <div class="сoverpage">
     <div class="page">
       <section class="main-search">
-        <!--Блок хэдер-->
+        <!--Блок хэдер --
         <header class="header header_type_white">
           <p class="header__logo">NewsExplorer</p>
           <nav class="header__navigation">
             <div class="header__side header__side_type_white" tabindex="1"></div>
-            <!--Если вход выполнен, отображается этот блок, блок ниже скрыт, управляется классом logged-in_is-hidden-->
+            <!--Если вход выполнен, отображается этот блок, блок ниже скрыт, управляется классом logged-in_is-hidden
             <div class="header__links header__links_type_white">
               <div class="logged-in">
                 <a class="link header__link" href="#">Главная</a>
@@ -28,7 +30,7 @@
                 <button class="authorization__button">Грета <img class="authorization__image"
                     src="<%=require('./images/Exit-icon-white.png')%>" alt="Выйти"></button>
               </div>
-              <!--Если вход не выполнен, отображается этот блок, блок выше скрыт, управляется классом not-logged-in_is-hidden-->
+              <!--Если вход не выполнен, отображается этот блок, блок выше скрыт, управляется классом not-logged-in_is-hidden
               <div class="not-logged-in not-logged-in_is-hidden">
                 <a class="link header__link" href="#">Главная</a>
                 <button class="authorization__button">Авторизоваться</button>
@@ -36,7 +38,7 @@
             </div>
           </nav>
         </header>
-        <!--Форма для поиска статей-->
+        <!--Форма для поиска статей--
         <div class="search">
           <h1 class="search__title">Что в мире творится?</h1>
           <h3 class="search__subtitle">Находите самые свежие статьи на любую тему и сохраняйте в своём
@@ -49,24 +51,24 @@
           </form>
         </div>
       </section>
-      <!--Загрузка новостей-->
+      <!--Загрузка новостей--
       <section class="loading">
-        <!--добавить класс loading_is-opened чтобы посмотреть-->
+        <!--добавить класс loading_is-opened чтобы посмотреть--
         <div class="loading__image"></div>
         <h4 class="loading__title">Идет поиск новостей...</h4>
       </section>
-      <!--Ничего не найдено-->
+      <!--Ничего не найдено--
       <section class="no-results">
-        <!--добавить класс no-results_is-opened чтобы посмотреть-->
+        <!--добавить класс no-results_is-opened чтобы посмотреть--
         <div class="no-results__image"></div>
         <h4 class="no-results__title">Ничего не найдено</h4>
         <h5 class="no-results__subtitle">К сожалению по вашему запросу ничего не найдено.</h5>
       </section>
-      <!--Результаты поиска, список новостей-->
+      <!--Результаты поиска, список новостей--
       <section class="news">
         <h2 class="news__title">Результаты поиска</h2>
         <div class="news-list">
-          <!--Пример карточки-->
+          <!--Пример карточки--
           <div class="news-card">
             <div class="news-card__image"></div>
             <button class="news-card__icon news-card__icon_type_save" type="button"></button>
@@ -116,7 +118,7 @@
         </div>
         <button class="news__show-more" type="button">Показать еще</button>
       </section>
-      <!--Об авторе-->
+      <!--Об авторе--
       <section class="author">
         <img class="author__avatar" src="<%=require('./images/image-03.png')%>" alt="Портрет автора">
         <h2 class="author__title">Об авторе</h2>
@@ -128,9 +130,9 @@
             научились, и чем можете помочь потенциальным заказчикам.</p>
         </article>
       </section>
-      <!--Окно входа-->
+      <!--Окно входа--
       <div class="popup popup_type_authorization">
-        <!--добавить к popup класс popup_is-opened чтобы посмотреть-->
+        <!--добавить к popup класс popup_is-opened чтобы посмотреть--
         <div class="popup__content">
           <img src="<%=require('./images/close.svg')%>" alt="Закрыть окно" class="popup__close">
           <h3 class="popup__title">Вход</h3>
@@ -145,14 +147,14 @@
             <span class="error-message" id="password"></span>
 
             <button type="submit" name="submit" class="button popup__button popup__button_add">Войти</button>
-            <!--добавить к popup класс popup__button_active чтобы посмотреть активную версию кнопки-->
+            <!--добавить к popup класс popup__button_active чтобы посмотреть активную версию кнопки--
           </form>
           <p class="popup__another-way">или <a class="link popup__link" href="">Зарегистрироваться</a></p>
         </div>
       </div>
-      <!--Окно регистрации-->
+      <!--Окно регистрации--
       <div class="popup popup_type_registration">
-        <!--добавить к popup класс popup_is-opened чтобы посмотреть-->
+        <!--добавить к popup класс popup_is-opened чтобы посмотреть--
         <div class="popup__content">
           <img src="<%=require('./images/close.svg')%>" alt="Закрыть окно" class="popup__close">
           <h3 class="popup__title">Регистрация</h3>
@@ -172,22 +174,22 @@
             <span class="error-message" id="user">Такой пользователь уже существует</span>
             <button type="submit" name="submit"
               class="button popup__button popup__button_add">Зарегистрироваться</button>
-            <!--добавить класс popup__button_active чтобы посмотреть активную версию кнопки-->
+            <!--добавить класс popup__button_active чтобы посмотреть активную версию кнопки--
           </form>
           <p class="popup__another-way">или <a class="link popup__link" href="">Войти</a>
           </p>
         </div>
       </div>
-      <!--Окно Регистрация выполена-->
+      <!--Окно Регистрация выполена--
       <div class="popup popup_type_registered">
-        <!--добавить к popup класс popup_is-opened чтобы посмотреть-->
+        <!--добавить к popup класс popup_is-opened чтобы посмотреть--
         <div class="popup__content">
           <img src="<%=require('./images/close.svg')%>" alt="Закрыть окно" class="popup__close">
           <h3 class="popup__title">Пользователь успешно зарегистрирован!</h3>
           <a class="link popup__link" href="">Выполнить вход</a>
         </div>
       </div>
-      <!--Блок футер-->
+      <!--Блок футер--
       <footer class="footer">
         <p class="footer__copyright">&#169; 2020 Supersite, Powered by News API</p>
         <nav class="footer__links">
@@ -200,8 +202,9 @@
         </nav>
       </footer>
     </div>
-  </div>
+  </div> -->
   <script src="<%= htmlWebpackPlugin.files.chunks.main.entry %>"></script>
+
 </body>
 
 </html>

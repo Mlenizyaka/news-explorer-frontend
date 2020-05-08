@@ -5,7 +5,7 @@ const presets = [
       targets: {
         android: '67',
         ios: '12',
-        edge: "17",
+        edge: "15",
         ie: "11",
         firefox: "50",
         chrome: "64",
