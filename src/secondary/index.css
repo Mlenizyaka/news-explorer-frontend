@@ -1,6 +1,5 @@
-/*
 @import url('../vendor/fonts.css');
-@import url('../../src/vendor/normalize.css');
+@import url('../vendor/normalize.css');
 @import url('../blocks/сoverpage/сoverpage.css');
 @import url('../blocks/page/page.css');
 @import url('../blocks/link/link.css');
@@ -10,4 +9,3 @@
 @import url('../blocks/news-card/news-card.css');
 @import url('../blocks/user-data/user-data.css');
 @import url('../blocks/saved-news/saved-news.css');
-*/

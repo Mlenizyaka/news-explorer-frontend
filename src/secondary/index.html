@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="icon" href="<%=require('../images/favicon.png')%">
+  <link rel="icon" href="../images/favicon.png">
   <title>NewsExplorer</title>
   <link rel="stylesheet" href="<%=htmlWebpackPlugin.files.chunks.secondary.css %>">
 
@@ -15,7 +15,7 @@
 
   <div class="сoverpage">
     <div class="page">
-      <!--Блок хэдер--
+      !--Блок хэдер--
       <header class="header header_type_black">
         <p class="header__logo">NewsExplorer</p>
         <nav class="header__navigation">
@@ -28,17 +28,17 @@
           </div>
         </nav>
       </header>
-      <!--Блок приветствия пользователя--
+      !--Блок приветствия пользователя--
       <section class="user-data">
         <h4 class="user-data__subtitle">Сохранённые статьи</h4>
         <h1 class="user-data__title">Грета, у вас 5 сохранённых статей</h1>
         <h3 class="user-data__keywords">По ключевым словам: <span class="user-data__keyword">Природа, Тайга и 2
             другим</span></h3>
       </section>
-      <!--Сохраненные статьи пользователя--
+      !--Сохраненные статьи пользователя--
       <section class="saved-news">
         <div class="news-list">
-          <!--Пример карточки--
+          !--Пример карточки--
           <div class="news-card">
             <div class="news-card__image"></div>
             <div class="news-card__keyword">
@@ -59,7 +59,7 @@
           </div>
         </div>
       </section>
-      <!--Блок футер--
+      !--Блок футер--
       <footer class="footer">
         <p class="footer__copyright">&#169; 2020 Supersite, Powered by News API</p>
         <nav class="footer__links">
@@ -74,7 +74,6 @@
     </div>
   </div> -->
   <script src="<%= htmlWebpackPlugin.files.chunks.secondary.entry %>"></script>
-
 </body>
 
 </html>

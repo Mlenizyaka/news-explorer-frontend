@@ -1,5 +1,5 @@
-/* @import url('./vendor/fonts.css');
-@import url('../src/vendor/normalize.css');
+@import url('./vendor/fonts.css');
+@import url('./vendor/normalize.css');
 @import url('./blocks/сoverpage/сoverpage.css');
 @import url('./blocks/page/page.css');
 @import url('./blocks/main-search/main-search.css');
@@ -13,4 +13,3 @@
 @import url('./blocks/news-card/news-card.css');
 @import url('./blocks/loading/loading.css');
 @import url('./blocks/no-results/no-results.css');
-*/
