@@ -2,11 +2,12 @@ const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const WebpackMd5Hash = require('webpack-md5-hash');
+const webpack = require('webpack');
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const cssnano = require('cssnano');
 
 const isDev = process.env.NODE_ENV === 'development';
-const webpack = require('webpack');
+
 
 module.exports = {
   entry: {
@@ -28,7 +29,7 @@ module.exports = {
         test: /\.css$/i,
         use: [
           isDev
-            ? 'style-loader'
+            ? { loader: 'style-loader' }
             : {
               loader: MiniCssExtractPlugin.loader,
               options: {
@@ -72,21 +73,13 @@ module.exports = {
       },
       {
         test: /\.(eot|ttf|woff|woff2)$/,
-        loader: 'file-loader?name=./vendor/[name].[ext]&publicPath=../',
+        loader: 'file-loader?name=./vendor/fonts/[name].[ext]&publicPath=../',
       },
     ],
   },
   plugins: [
     new MiniCssExtractPlugin({
       filename: '[name]/[name].[contenthash].css',
-    }),
-    new OptimizeCssAssetsPlugin({
-      assetNameRegExp: /\.css$/g,
-      cssProcessor: cssnano,
-      cssProcessorPluginOptions: {
-        preset: ['default'],
-      },
-      canPrint: true,
     }),
     new HtmlWebpackPlugin({
       inject: false,
@@ -101,6 +94,14 @@ module.exports = {
     new WebpackMd5Hash(),
     new webpack.DefinePlugin({
       NODE_ENV: JSON.stringify(process.env.NODE_ENV),
+    }),
+    new OptimizeCssAssetsPlugin({
+      assetNameRegExp: /\.css$/g,
+      cssProcessor: cssnano,
+      cssProcessorPluginOptions: {
+        preset: ['default'],
+      },
+      canPrint: true,
     }),
   ],
 };
