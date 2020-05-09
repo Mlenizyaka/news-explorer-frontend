@@ -12,7 +12,7 @@ News Explorer - надёжный и быстрый сервис для поис�
 - Webpack
 
 ## Демо
-https://Mlenizyaka.github.io/news-explorer-frontend/
+https://Mlenizyaka.github.io/news-explorer-frontend.github.io/
 
 ## Установка
 Перед началом работы необходимо проверить наличие установленного node.js и npm
