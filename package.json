@@ -18,7 +18,7 @@
   "bugs": {
     "url": "https://github.com/Mlenizyaka/news-explorer-frontend/issues"
   },
-  "homepage": "https://github.com/Mlenizyaka/news-explorer-frontend#readme",
+  "homepage": "https://Mlenizyaka.github.io/news-explorer-frontend/",
   "devDependencies": {
     "@babel/cli": "7.8.4",
     "@babel/core": "7.9.6",
