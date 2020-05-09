@@ -1,7 +1,7 @@
 @import url('./__image/news-card__image.css');
-@import url('./__icon/news-card__icon.css');
 @import url('./__icon_type_delete/news-card__icon_type_delete.css');
 @import url('./__icon_type_save/news-card__icon_type_save.css');
+@import url('./__icon/news-card__icon.css');
 @import url('./__tooltip/news-card__tooltip.css');
 @import url('./__tooltip-text/news-card__tooltip-text.css');
 @import url('./__article/news-card__article.css');

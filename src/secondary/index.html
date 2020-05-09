@@ -4,18 +4,19 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="icon" href="../images/favicon.png">
+  <meta name="author" content="Анастасия Логинова">
+  <meta name="description" content="NewsExplorer - поисковик новостей по ключевым словам">
+  <link rel="icon" href="../<%=require('../images/favicon.svg')%>" type="image/svg" sizes="16x16">
   <title>NewsExplorer</title>
   <link rel="stylesheet" href="<%=htmlWebpackPlugin.files.chunks.secondary.css %>">
 
 </head>
 
 <body>
-  <!--
 
   <div class="сoverpage">
     <div class="page">
-      !--Блок хэдер--
+      <!--Блок хэдер-->
       <header class="header header_type_black">
         <p class="header__logo">NewsExplorer</p>
         <nav class="header__navigation">
@@ -24,21 +25,21 @@
             <a class="link header__link" href="../index.html">Главная</a>
             <a class="link header__link" href="#">Сохраненные статьи</a>
             <button class="authorization__button">Грета <img class="authorization__image"
-                src="<%=require('../images/Exit-icon-black.png')%>" alt="Выйти"></button>
+                src="../<%=require('../images/Exit-icon-black.png')%>" alt="Выйти"></button>
           </div>
         </nav>
       </header>
-      !--Блок приветствия пользователя--
+      <!--Блок приветствия пользователя-->
       <section class="user-data">
         <h4 class="user-data__subtitle">Сохранённые статьи</h4>
         <h1 class="user-data__title">Грета, у вас 5 сохранённых статей</h1>
         <h3 class="user-data__keywords">По ключевым словам: <span class="user-data__keyword">Природа, Тайга и 2
             другим</span></h3>
       </section>
-      !--Сохраненные статьи пользователя--
+      <!--Сохраненные статьи пользователя-->
       <section class="saved-news">
         <div class="news-list">
-          !--Пример карточки--
+          <!--Пример карточки-->
           <div class="news-card">
             <div class="news-card__image"></div>
             <div class="news-card__keyword">
@@ -59,20 +60,20 @@
           </div>
         </div>
       </section>
-      !--Блок футер--
+      <!--Блок футер-->
       <footer class="footer">
         <p class="footer__copyright">&#169; 2020 Supersite, Powered by News API</p>
         <nav class="footer__links">
           <a class="link footer__link" href="#">Главная</a>
           <a class="link footer__link" href="https://praktikum.yandex.ru/web/" target="_blank">Яндекс.Практикум</a>
           <a class="footer__link" href="https://github.com/Mlenizyaka" target="_blank"><img class="footer__social-icon"
-              src="<%=require('../images/Vector-GH.svg')%>" alt="GitHub"></a>
+              src="../<%=require('../images/Vector-GH.svg')%>" alt="GitHub"></a>
           <a class="footer__link" href="https://www.facebook.com/profile.php?id=100002918287725" target="_blank"><img
-              class="footer__social-icon" src="<%=require('../images/Vector-FB.svg')%>" alt="Facebook"></a>
+              class="footer__social-icon" src="../<%=require('../images/Vector-FB.svg')%>" alt="Facebook"></a>
         </nav>
       </footer>
     </div>
-  </div> -->
+  </div>
   <script src="<%= htmlWebpackPlugin.files.chunks.secondary.entry %>"></script>
 </body>
 

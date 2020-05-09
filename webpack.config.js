@@ -3,8 +3,8 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const WebpackMd5Hash = require('webpack-md5-hash');
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
+const cssnano = require('cssnano');
 
-const isDev = process.env.NODE_ENV === 'development';
 const webpack = require('webpack');
 
 module.exports = {
@@ -25,15 +25,10 @@ module.exports = {
       },
       {
         test: /\.css$/i,
-        use: [
-          isDev
-            ? 'style-loader'
-            : {
-              loader: MiniCssExtractPlugin.loader,
-              options: {
-                publicPath: '../',
-              },
-            },
+        use: [{
+          loader: MiniCssExtractPlugin.loader,
+          options: { publicPath: '../' },
+        },
           'css-loader',
           'postcss-loader',
         ],
@@ -81,7 +76,7 @@ module.exports = {
     }),
     new OptimizeCssAssetsPlugin({
       assetNameRegExp: /\.css$/g,
-      cssProcessor: require('cssnano'),
+      cssProcessor: cssnano,
       cssProcessorPluginOptions: {
         preset: ['default'],
       },
