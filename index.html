@@ -8,7 +8,7 @@
   <meta name="description" content="NewsExplorer - поисковик новостей по ключевым словам">
   <link rel="icon" href="./images/favicon.svg" type="image/svg" sizes="16x16">
   <title>NewsExplorer</title>
-  <link rel="stylesheet" href="main/main.a9881a54b9f7c01baa13.css">
+  <link rel="stylesheet" href="main/main.84c2184e0f4a6691b03c.css">
 </head>
 
 <body>
@@ -20,21 +20,24 @@
           <p class="header__logo">NewsExplorer</p>
           <nav class="header__navigation">
             <div class="header__side header__side_type_white" tabindex="1"></div>
-            <!--Если вход выполнен, отображается этот блок, блок ниже скрыт, управляется классом logged-in_is-hidden-->
-            <div class="header__links header__links_type_white">
-              <div class="logged-in">
-                <a class="link header__link" href="#">Главная</a>
-                <a class="link header__link" href="./secondary/index.html">Сохраненные
+            <ul class="header__items header__items_type_white">
+              <li class="header__item">
+                <a class="link header__link header__link_type_white" href="#">Главная</a>
+              </li>
+              <li class="header__item">
+                <a class="link header__link header__link_authorized" href="./secondary/index.html">Сохраненные
                   статьи</a>
-                <button class="authorization__button">Грета <img class="authorization__image"
-                    src="./images/Exit-icon-white.png" alt="Выйти"></button>
-              </div>
-              <!--Если вход не выполнен, отображается этот блок, блок выше скрыт, управляется классом not-logged-in_is-hidden-->
-              <div class="not-logged-in not-logged-in_is-hidden">
-                <a class="link header__link" href="#">Главная</a>
-                <button class="authorization__button">Авторизоваться</button>
-              </div>
-            </div>
+              </li>
+              <li class="header__item">
+                <button class="button authorization__button authorization__button_authorized">Грета
+                  <img class="authorization__image" src="./images/Exit-icon-white.png"
+                    alt="Выйти"></button>
+              </li>
+              <li class="header__item">
+                <button
+                  class="button button_is-hidden authorization__button authorization__button_not-authorized">Авторизоваться</button>
+              </li>
+            </ul>
           </nav>
         </header>
         <!--Форма для поиска статей-->
@@ -121,13 +124,13 @@
       <section class="author">
         <img class="author__avatar" src="./images/image-03.png" alt="Портрет автора">
         <h2 class="author__title">Об авторе</h2>
-        <article class="author__article">
+        <div class="author__article">
           <p class="author__paragraph">Это блок с описанием автора проекта. Здесь следует указать, как вас
             зовут, чем вы занимаетесь, какими технологиями разработки владеете.
           </p>
           <p class="author__paragraph">Также можно рассказать о процессе обучения в Практикуме, чему вы тут
             научились, и чем можете помочь потенциальным заказчикам.</p>
-        </article>
+        </div>
       </section>
       <!--Окно входа-->
       <div class="popup popup_type_authorization">
@@ -135,15 +138,15 @@
         <div class="popup__content">
           <img src="./images/close.svg" alt="Закрыть окно" class="popup__close">
           <h3 class="popup__title">Вход</h3>
-          <form class="popup__form form__new" name="new" id="new-place" novalidate>
+          <form class="popup__form form__authorization" name="authorization" id="authorization" novalidate>
             <label class="input__subtitle">Email</label>
-            <input type="text" name="email" minlength="2" maxlength="30" class="popup__input popup__input_type_email"
-              placeholder="Введите почту" required>
-            <span class="error-message" id="email"></span>
+            <input type="text" name="auth-email" minlength="2" maxlength="30" id="authorization-email"
+              class="popup__input popup__input_type_email" placeholder="Введите почту" required>
+            <span class="error-message" id="auth-email"></span>
             <label class="input__subtitle">Пароль</label>
-            <input type="text" name="password" class="popup__input popup__input_type_password"
-              placeholder="Введите пароль" required>
-            <span class="error-message" id="password"></span>
+            <input type="text" name="auth-password" id="authorization-password"
+              class="popup__input popup__input_type_password" placeholder="Введите пароль" required>
+            <span class="error-message" id="auth-password"></span>
 
             <button type="submit" name="submit" class="button popup__button popup__button_authorization">Войти</button>
             <!--добавить к popup класс popup__button_active чтобы посмотреть активную версию кнопки-->
@@ -157,19 +160,19 @@
         <div class="popup__content">
           <img src="./images/close.svg" alt="Закрыть окно" class="popup__close">
           <h3 class="popup__title">Регистрация</h3>
-          <form class="popup__form form__new" name="new" id="new-place" novalidate>
+          <form class="popup__form form__registration" name="registration" id="registration" novalidate>
             <label class="input__subtitle">Email</label>
-            <input type="text" name="email" minlength="2" maxlength="30" class="popup__input popup__input_type_email"
-              placeholder="Введите почту" required>
-            <span class="error-message" id="email">Неправильный формат email</span>
+            <input type="text" name="reg-email" minlength="2" maxlength="30" id="registration-email"
+              class="popup__input popup__input_type_email" placeholder="Введите почту" required>
+            <span class="error-message" id="reg-email">Неправильный формат email</span>
             <label class="input__subtitle">Пароль</label>
-            <input type="text" name="password" class="popup__input popup__input_type_password"
-              placeholder="Введите пароль" required>
-            <span class="error-message" id="password"></span>
+            <input type="text" name="reg-password" id="registration-password"
+              class="popup__input popup__input_type_password" placeholder="Введите пароль" required>
+            <span class="error-message" id="reg-password"></span>
             <label class="input__subtitle">Имя</label>
-            <input type="text" name="name" class="popup__input popup__input_type_password" minlength="2" maxlength="30"
-              placeholder="Введите свое имя" required>
-            <span class="error-message" id="name"></span>
+            <input type="text" name="reg-name" id="registration-name" class="popup__input popup__input_type_password"
+              minlength="2" maxlength="30" placeholder="Введите свое имя" required>
+            <span class="error-message" id="reg-name"></span>
             <span class="error-message" id="user">Такой пользователь уже существует</span>
             <button type="submit" name="submit"
               class="button popup__button popup__button_registration">Зарегистрироваться</button>
@@ -192,12 +195,23 @@
       <footer class="footer">
         <p class="footer__copyright">&#169; 2020 Supersite, Powered by News API</p>
         <nav class="footer__links">
-          <a class="link footer__link" href="#">Главная</a>
-          <a class="link footer__link" href="https://praktikum.yandex.ru/web/" target="_blank">Яндекс.Практикум</a>
-          <a class="footer__link" href="https://github.com/Mlenizyaka" target="_blank"><img class="footer__social-icon"
-              src="./images/Vector-GH.svg" alt="GitHub"></a>
-          <a class="footer__link" href="https://www.facebook.com/profile.php?id=100002918287725" target="_blank"><img
-              class="footer__social-icon" src="./images/Vector-FB.svg" alt="Facebook"></a>
+          <ul class="footer__items">
+            <li class="footer__item">
+              <a class="link footer__link" href="#">Главная</a>
+            </li>
+            <li class="footer__item">
+              <a class="link footer__link" href="https://praktikum.yandex.ru/web/" target="_blank">Яндекс.Практикум</a>
+            </li>
+            <li class="footer__item">
+              <a class="footer__link" href="https://github.com/Mlenizyaka" target="_blank"><img
+                  class="footer__social-icon" src="./images/Vector-GH.svg" alt="GitHub"></a>
+            </li>
+            <li class="footer__item">
+              <a class="footer__link" href="https://www.facebook.com/profile.php?id=100002918287725"
+                target="_blank"><img class="footer__social-icon" src="./images/Vector-FB.svg"
+                  alt="Facebook"></a>
+            </li>
+          </ul>
         </nav>
       </footer>
     </div>
