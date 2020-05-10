@@ -1,6 +1,8 @@
 @import url('./__copyright/footer__copyright.css');
 @import url('./__links/footer__links.css');
 @import url('./__links/__social-icon/footer__social-icon.css');
+@import url('./__items/footer__items.css');
+@import url('./__item/footer__item.css');
 
 .footer {
     width: 100%;

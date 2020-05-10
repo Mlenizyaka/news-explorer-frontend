@@ -1,5 +1,4 @@
 .header__link {
-    margin-right: 2vw;
     position: relative;
     font-style: normal;
     font-weight: 500;
@@ -16,9 +15,9 @@
     height: 72px;
     width: 100%;
     top: -30px;
-    left: 0; 
+    left: 0;
     pointer-events: none;
-    
+
 }
 
 .header__link:focus::after {

@@ -13,7 +13,7 @@
 @import url('./__keyword-text/news-card__keyword-text.css');
 
 .news-card {
-    width: 28vw;
+    width: 400px;
     background-color: #fff;
     border-radius: 16px;
     height: 576px;
@@ -25,6 +25,12 @@
     display: flex;
     flex-direction: column;
     align-items: stretch;
+}
+
+@media screen and (max-width: 1440px) {
+  .news-card {
+    width: 28vw;
+  }
 }
 
 @media screen and (max-width: 1240px) {

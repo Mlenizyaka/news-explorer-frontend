@@ -1,5 +1,4 @@
 .footer__link {
-    margin-left: 3vw;
     font-family: 'Roboto';
     font-style: normal;
     font-weight: normal;
@@ -8,28 +7,8 @@
     text-decoration: none;
     color: #1a1b22;
     transition: opacity 0.3s linear;
-    position: relative;
 }
 
 .footer__link:hover {
     opacity: 0.8;
-}
-
-@media screen and (max-width: 735px) {
-    .footer__link {
-        margin-left: 0;
-        margin-bottom: 10px;
-    }
-
-    .footer__link:last-of-type {
-        grid-row-start: 1;
-        grid-row-end: 2;
-        grid-column-start: 3;
-        grid-column-end: 4;
-        margin-left: auto;
-    }
-
-    .footer__link:nth-of-type(3) {
-        margin-left: auto;
-    }
 }

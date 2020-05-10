@@ -3,12 +3,19 @@
 @import url('./__form/search__form.css');
 
 .search {
-    width: 42%;
+    width: 608px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
-    margin-bottom: 5.5vw;
+    margin-bottom: 80px;
+}
+
+@media screen and (max-width: 1440px) {
+    .search {
+        width: 42%;
+        margin-bottom: 5.5vw;
+    }
 }
 
 @media screen and (max-width: 1200px) {

@@ -1,5 +1,5 @@
 .news__show-more {
-    margin: 4.4vw auto 5.5vw auto;
+    margin: 64px auto 80px auto;
     width: 288px;
     height: 64px;
     background: #fff;
@@ -10,13 +10,19 @@
     font-weight: 500;
     font-size: 1.2rem;
     line-height: 1.5;
-    
+
     color: #1a1b22;
     transition: opacity 0.3s linear;
 }
 
 .news__show-more:hover {
     opacity: 0.9;
+}
+
+@media screen and (max-width: 1440px) {
+  .news__show-more {
+    margin: 4.4vw auto 5.5vw auto;
+  }
 }
 
 @media screen and (max-width: 900px) {

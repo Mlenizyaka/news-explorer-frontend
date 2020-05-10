@@ -11,4 +11,9 @@
     box-sizing: border-box;
     padding: 0px;
     margin-bottom: 3px;
+    outline: none;
   }
+
+.popup__input:focus {
+  border-bottom-color: rgba(0, 0, 0, 1);
+}

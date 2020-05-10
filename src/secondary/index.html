@@ -21,12 +21,18 @@
         <p class="header__logo">NewsExplorer</p>
         <nav class="header__navigation">
           <div class="header__side header__side_type_black" tabindex="1"></div>
-          <div class="header__links header__links_type_black">
-            <a class="link header__link" href="../index.html">Главная</a>
-            <a class="link header__link" href="#">Сохраненные статьи</a>
-            <button class="authorization__button">Грета <img class="authorization__image"
-                src="../<%=require('../images/Exit-icon-black.png')%>" alt="Выйти"></button>
-          </div>
+          <ul class="header__items header__items_type_black">
+            <li class="header__item">
+              <a class="link header__link" href="../index.html">Главная</a>
+            </li>
+            <li class="header__item">
+              <a class="link header__link" href="#">Сохраненные статьи</a>
+            </li>
+            <li class="header__item">
+              <button class="authorization__button">Грета <img class="authorization__image"
+                  src="../<%=require('../images/Exit-icon-black.png')%>" alt="Выйти"></button>
+            </li>
+          </ul>
         </nav>
       </header>
       <!--Блок приветствия пользователя-->
@@ -64,12 +70,23 @@
       <footer class="footer">
         <p class="footer__copyright">&#169; 2020 Supersite, Powered by News API</p>
         <nav class="footer__links">
-          <a class="link footer__link" href="#">Главная</a>
-          <a class="link footer__link" href="https://praktikum.yandex.ru/web/" target="_blank">Яндекс.Практикум</a>
-          <a class="footer__link" href="https://github.com/Mlenizyaka" target="_blank"><img class="footer__social-icon"
-              src="../<%=require('../images/Vector-GH.svg')%>" alt="GitHub"></a>
-          <a class="footer__link" href="https://www.facebook.com/profile.php?id=100002918287725" target="_blank"><img
-              class="footer__social-icon" src="../<%=require('../images/Vector-FB.svg')%>" alt="Facebook"></a>
+          <ul class="footer__items">
+            <li class="footer__item">
+              <a class="link footer__link" href="#">Главная</a>
+            </li>
+            <li class="footer__item">
+              <a class="link footer__link" href="https://praktikum.yandex.ru/web/" target="_blank">Яндекс.Практикум</a>
+            </li>
+            <li class="footer__item">
+              <a class="footer__link" href="https://github.com/Mlenizyaka" target="_blank"><img
+                  class="footer__social-icon" src="../<%=require('../images/Vector-GH.svg')%>" alt="GitHub"></a>
+            </li>
+            <li class="footer__item">
+              <a class="footer__link" href="https://www.facebook.com/profile.php?id=100002918287725"
+                target="_blank"><img class="footer__social-icon" src="../<%=require('../images/Vector-FB.svg')%>"
+                  alt="Facebook"></a>
+            </li>
+          </ul>
         </nav>
       </footer>
     </div>

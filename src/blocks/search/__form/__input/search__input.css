@@ -6,7 +6,7 @@
     box-sizing: border-box;
     padding-left: 2.6vw;
     border-radius: 100px;
-    border: none;
+    border: 1px solid #d1d2d6;
     font-family: 'Roboto';
     font-style: normal;
     font-weight: normal;
@@ -18,6 +18,8 @@
 
 .search__input:focus {
     color:#1a1b22;
+    border: 1px solid #347eff;
+
 }
 
 @media screen and (max-width: 800px) {

@@ -3,9 +3,13 @@
 .footer__links {
     display: flex;
     margin: 0;
+    margin-right: 104px;
+}
+
+@media screen and (max-width: 1440px) {
+  .footer__links {
     margin-right: 7vw;
-    list-style-type: none;
-    padding: 0;
+  }
 }
 
 @media screen and (max-width: 950px) {
@@ -15,15 +19,8 @@
 }
 
 @media screen and (max-width: 735px) {
-    .footer__links {
-        width: 88%;
-        margin: 20px auto 0 auto;
-        display: grid;
-        grid-auto-flow: column;
-        grid-template-columns: 70% 15% 15%;
-        grid-template-rows: 50% 50%;
-        grid-column-gap: 0;
-        grid-row-gap: 0;
-        justify-content: flex-start;
-    }
+  .footer__links {
+      width: 88%;
+      margin: 20px auto 0 auto;
+  }
 }
