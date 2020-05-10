@@ -1,27 +1,14 @@
+@import url('./_type_black/header__link_type_black.css');
+@import url('./_type_white/header__link_type_white.css');
+
 .header__link {
-    position: relative;
+    margin-right: 2vw;
     font-style: normal;
     font-weight: 500;
     font-size: 1.1rem;
     line-height: 1.5;
     color: inherit;
     font-family: 'Roboto';
-}
-
-.header__link::after {
-    content: '';
-    position: absolute;
-    z-index: 1;
-    height: 72px;
-    width: 100%;
-    top: -30px;
-    left: 0;
-    pointer-events: none;
-
-}
-
-.header__link:focus::after {
-    border-bottom: #fff solid 3px;
 }
 
 @media screen and (max-width: 850px) {
@@ -32,6 +19,6 @@
 
 @media screen and (max-width: 550px) {
     .header__link {
-        margin: 30px auto 0 5vw;
-    }
+      margin: 30px auto 0 5vw;
+  }
 }

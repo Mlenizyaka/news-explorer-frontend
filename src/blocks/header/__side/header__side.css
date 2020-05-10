@@ -1,5 +1,3 @@
-@import url('../__links/header__links.css');
-
 .header__side {
     display: none;
     width: 24px;
@@ -14,9 +12,9 @@
         z-index: 3;
     }
 /* сейчас реализовано только для просмотра блока. Сделаю с помощью js как и открытие попапов*/
-    .header__side:focus~.header__links,
-    .header__side:active~.header__links,
-    .header__links:hover {
+    .header__side:focus~.header__items,
+    .header__side:active~.header__items,
+    .header__items:hover {
         display: flex;
     }
 }
