@@ -5,13 +5,7 @@
     width: 100%;
     position: relative;
     display: flex;
-    align-items: center;
+    flex-direction: column;
+    flex-wrap: wrap;
     margin: 0;
-}
-
-@media screen and (max-width: 500px) {
-    .search__form {
-        flex-direction: column;
-        flex-wrap: wrap;
-    }
 }
