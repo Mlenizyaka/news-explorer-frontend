@@ -8,11 +8,12 @@ News Explorer - надёжный и быстрый сервис для поис�
 **В работе использовались:**
 - HTML
 - CSS
+- JavaScript
 - БЭМ
 - Webpack
 
 ## Демо
-https://mlenizyaka.github.io/news-explorer-frontend/
+https://mlenizyaka.github.io/news-explorer-frontend
 
 ## Установка
 Перед началом работы необходимо проверить наличие установленного node.js и npm
@@ -38,10 +39,10 @@ https://mlenizyaka.github.io/news-explorer-frontend/
 
 `npm run deploy`
 
-## О будущих релизах
-Бэкенд и фронтенд будут соединены при помощи NewsExplorer API (https://github.com/Mlenizyaka/news-explorer-backend, https://api.mlews.site/).
+## Реализовано
+Бэкенд и фронтенд соединены при помощи NewsExplorer API (https://github.com/Mlenizyaka/news-explorer-backend, https://api.mlews.site/).
 
-**Можно будет:**
+**Уже можно:**
 
 - создавать учетную запись
 - авторизироваться на сайте
