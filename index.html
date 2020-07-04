@@ -8,7 +8,7 @@
   <meta name="description" content="NewsExplorer - поисковик новостей по ключевым словам">
   <link rel="icon" href="./images/favicon.svg" type="image/svg" sizes="16x16">
   <title>NewsExplorer</title>
-  <link rel="stylesheet" href="main/main.84c2184e0f4a6691b03c.css">
+  <link rel="stylesheet" href="main/main.5fc55e10f269a3005434.css">
 </head>
 
 <body>
@@ -25,17 +25,19 @@
                 <a class="link header__link header__link_type_white" href="#">Главная</a>
               </li>
               <li class="header__item">
-                <a class="link header__link header__link_authorized" href="./secondary/index.html">Сохраненные
+                <a class="link link_is-hidden header__link header__link_authorized"
+                  href="./secondary/index.html">Сохраненные
                   статьи</a>
               </li>
               <li class="header__item">
-                <button class="button authorization__button authorization__button_authorized">Грета
+                <button class="button button_is-hidden authorization__button authorization__button_authorized">
+                  <span class="authorization__button_username"></span>
                   <img class="authorization__image" src="./images/Exit-icon-white.png"
                     alt="Выйти"></button>
               </li>
               <li class="header__item">
                 <button
-                  class="button button_is-hidden authorization__button authorization__button_not-authorized">Авторизоваться</button>
+                  class="button authorization__button authorization__button_not-authorized">Авторизоваться</button>
               </li>
             </ul>
           </nav>
@@ -46,10 +48,14 @@
           <h3 class="search__subtitle">Находите самые свежие статьи на любую тему и сохраняйте в своём
             личном
             кабинете.</h3>
-          <form class="search__form">
-            <input class="search__input" type="text" name="search" minlength="2" maxlength="40"
-              placeholder="Введите тему новости" required>
-            <button class="button search__button" type="submit" name="submit">Искать</button>
+          <form class="form search__form" name="search">
+            <div class="search__container">
+              <input class="search__input" type="text" name="search" minlength="2" maxlength="40"
+                placeholder="Введите тему новости" required>
+              <!--добавить к search__button класс search__button_active чтобы посмотреть активную версию кнопки-->
+              <button class="button search__button" type="submit" name="submit">Искать</button>
+            </div>
+            <span class="error-message error-message_type_search" id="search"></span>
           </form>
         </div>
       </section>
@@ -67,58 +73,12 @@
         <h5 class="no-results__subtitle">К сожалению по вашему запросу ничего не найдено.</h5>
       </section>
       <!--Результаты поиска, список новостей-->
+      <!--добавить класс news_is-opened чтобы посмотреть-->
       <section class="news">
         <h2 class="news__title">Результаты поиска</h2>
         <div class="news-list">
-          <!--Пример карточки-->
-          <div class="news-card">
-            <div class="news-card__image"></div>
-            <button class="news-card__icon news-card__icon_type_save" type="button"></button>
-            <div class="news-card__tooltip">
-              <p class="news-card__tooltip-text">Войдите, чтобы сохранять статьи</p>
-            </div>
-            <div class="news-card__article">
-              <span class="news-card__date">2 августа, 2019</span>
-              <h3 class="news-card__title">Национальное достояние – парки</h3>
-              <p class="news-card__text">В 2016 году Америка отмечала важный юбилей: сто лет назад здесь
-                начала складываться система национальных парков – охраняемых территорий, где и сегодня
-                каждый может приобщиться к природе.</p>
-              <p class="news-card__sourse">Лента.ру</p>
-            </div>
-          </div>
-          <div class="news-card">
-            <div class="news-card__image"></div>
-            <button class="news-card__icon news-card__icon_type_save" type="button"></button>
-            <div class="news-card__tooltip">
-              <p class="news-card__tooltip-text">Войдите, чтобы сохранять статьи</p>
-            </div>
-            <div class="news-card__article">
-              <span class="news-card__date">2 августа, 2019</span>
-              <h3 class="news-card__title">Лесные огоньки: история одной фотографии</h3>
-              <p class="news-card__text">Фотограф отвлеклась от освещения суровой политической реальности
-                Мексики, чтобы запечатлеть ускользающую красоту одного
-                из местных чудес природы.</p>
-              <p class="news-card__sourse">Медуза</p>
-            </div>
-          </div>
-          <div class="news-card">
-            <div class="news-card__image"></div>
-            <button class="news-card__icon news-card__icon_type_save" type="button"></button>
-            <div class="news-card__tooltip">
-              <p class="news-card__tooltip-text">Войдите, чтобы сохранять статьи</p>
-            </div>
-            <div class="news-card__article">
-              <span class="news-card__date">2 августа, 2019</span>
-              <h3 class="news-card__title">«Первозданная тайга»: новый фотопроект Игоря Шпиленка</h3>
-              <p class="news-card__text">Знаменитый фотограф снимает первозданные леса России, чтобы
-                рассказать о необходимости их сохранения. В этот раз он отправился в Двинско-Пинежскую
-                тайгу, где...
-              </p>
-              <p class="news-card__sourse">Риа</p>
-            </div>
-          </div>
         </div>
-        <button class="news__show-more" type="button">Показать еще</button>
+        <button class="news__show-more news__show-more_is-hidden" type="button">Показать еще</button>
       </section>
       <!--Об авторе-->
       <section class="author">
@@ -138,20 +98,23 @@
         <div class="popup__content">
           <img src="./images/close.svg" alt="Закрыть окно" class="popup__close">
           <h3 class="popup__title">Вход</h3>
-          <form class="popup__form form__authorization" name="authorization" id="authorization" novalidate>
+          <form class="form popup__form form__authorization" name="authorization" id="authorization" novalidate>
             <label class="input__subtitle">Email</label>
-            <input type="text" name="auth-email" minlength="2" maxlength="30" id="authorization-email"
-              class="popup__input popup__input_type_email" placeholder="Введите почту" required>
-            <span class="error-message" id="auth-email"></span>
+            <input type="text" name="authEmail" minlength="2" maxlength="30" id="authorizationEmail"
+              class="popup__input popup__input_type_email" pattern="^\w+(-\w+)*?@\w+(-\w+)*?\.\w+$"
+              placeholder="Введите почту" required>
+            <span class="error-message" id="authEmail"></span>
             <label class="input__subtitle">Пароль</label>
-            <input type="text" name="auth-password" id="authorization-password"
-              class="popup__input popup__input_type_password" placeholder="Введите пароль" required>
-            <span class="error-message" id="auth-password"></span>
+            <input type="text" name="authPassword" id="authorizationPassword"
+              class="popup__input popup__input_type_password" minlength="8" maxlength="16" placeholder="Введите пароль"
+              required>
+            <span class="error-message" id="authPassword"></span>
 
             <button type="submit" name="submit" class="button popup__button popup__button_authorization">Войти</button>
             <!--добавить к popup класс popup__button_active чтобы посмотреть активную версию кнопки-->
           </form>
-          <p class="popup__another-way">или <a class="link popup__link" href="">Зарегистрироваться</a></p>
+          <p class="popup__another-way">или <span
+              class="popup__link popup__link_type_registration">Зарегистрироваться</span></p>
         </div>
       </div>
       <!--Окно регистрации-->
@@ -160,25 +123,27 @@
         <div class="popup__content">
           <img src="./images/close.svg" alt="Закрыть окно" class="popup__close">
           <h3 class="popup__title">Регистрация</h3>
-          <form class="popup__form form__registration" name="registration" id="registration" novalidate>
+          <form class="form popup__form form__registration" name="registration" id="registration" novalidate>
             <label class="input__subtitle">Email</label>
-            <input type="text" name="reg-email" minlength="2" maxlength="30" id="registration-email"
-              class="popup__input popup__input_type_email" placeholder="Введите почту" required>
-            <span class="error-message" id="reg-email">Неправильный формат email</span>
+            <input type="text" name="regEmail" minlength="2" maxlength="30" id="registrationEmail"
+              class="popup__input popup__input_type_email" pattern="^\w+(-\w+)*?@\w+(-\w+)*?\.\w+$"
+              placeholder="Введите почту" required>
+            <span class="error-message" id="regEmail"></span>
             <label class="input__subtitle">Пароль</label>
-            <input type="text" name="reg-password" id="registration-password"
-              class="popup__input popup__input_type_password" placeholder="Введите пароль" required>
-            <span class="error-message" id="reg-password"></span>
+            <input type="text" name="regPassword" id="registration-password"
+              class="popup__input popup__input_type_password" minlength="8" maxlength="16" placeholder="Введите пароль"
+              required>
+            <span class="error-message" id="regPassword"></span>
             <label class="input__subtitle">Имя</label>
-            <input type="text" name="reg-name" id="registration-name" class="popup__input popup__input_type_password"
+            <input type="text" name="regName" id="registrationName" class="popup__input popup__input_type_password"
               minlength="2" maxlength="30" placeholder="Введите свое имя" required>
-            <span class="error-message" id="reg-name"></span>
-            <span class="error-message" id="user">Такой пользователь уже существует</span>
+            <span class="error-message" id="regName"></span>
+            <span class="error-message" id="user"></span>
             <button type="submit" name="submit"
               class="button popup__button popup__button_registration">Зарегистрироваться</button>
             <!--добавить класс popup__button_active чтобы посмотреть активную версию кнопки-->
           </form>
-          <p class="popup__another-way">или <a class="link popup__link" href="">Войти</a>
+          <p class="popup__another-way">или <span class="popup__link popup__link_type_authorization">Войти</span>
           </p>
         </div>
       </div>
@@ -188,7 +153,7 @@
         <div class="popup__content">
           <img src="./images/close.svg" alt="Закрыть окно" class="popup__close">
           <h3 class="popup__title">Пользователь успешно зарегистрирован!</h3>
-          <a class="link popup__link" href="">Выполнить вход</a>
+          <p class="popup__link popup__link_type_authorization">Выполнить вход</p>
         </div>
       </div>
       <!--Блок футер-->
@@ -216,7 +181,7 @@
       </footer>
     </div>
   </div>
-  <script src="main/main.048dd97f94bbfcb260a5.js"></script>
+  <script src="main/main.7e6e37e9d9fd66e13f87.js"></script>
 </body>
 
 </html>
