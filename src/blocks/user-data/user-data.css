@@ -1,0 +1,11 @@
+@import url('./__subtitle/user-data__subtitle.css');
+@import url('./__title/user-data__title.css');
+@import url('./__keywords/user-data__keywords.css');
+@import url('./__keywords/_is-hidden/user-data__keywords_is-hidden.css');
+
+.user-data {
+    width: 100%;
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+}

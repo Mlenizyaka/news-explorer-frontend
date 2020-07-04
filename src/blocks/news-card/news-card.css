@@ -1,0 +1,74 @@
+@import url('./__image/news-card__image.css');
+@import url('./__icon_type_delete/news-card__icon_type_delete.css');
+@import url('./__icon_type_save/news-card__icon_type_save.css');
+@import url('./__icon/news-card__icon.css');
+@import url('./__tooltip/news-card__tooltip.css');
+@import url('./__tooltip/__tooltip_is-hidden/news-card__tooltip_is-hidden.css');
+@import url('./__tooltip-text/news-card__tooltip-text.css');
+@import url('./__article/news-card__article.css');
+@import url('./__date/news-card__date.css');
+@import url('./__title/news-card__title.css');
+@import url('./__text/news-card__text.css');
+@import url('./__sourse/news-card__sourse.css');
+@import url('./__keyword/news-card__keyword.css');
+@import url('./__keyword-text/news-card__keyword-text.css');
+
+.news-card {
+    width: 400px;
+    background-color: #fff;
+    border-radius: 16px;
+    height: 576px;
+    margin:  0 auto;
+    padding: 0;
+    box-sizing: border-box;
+    position: relative;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+}
+
+@media screen and (max-width: 1440px) {
+  .news-card {
+    width: 28vw;
+  }
+}
+
+@media screen and (max-width: 1240px) {
+    .news-card {
+        height: 45vw;
+    }
+}
+
+@media screen and (max-width: 1100px) {
+    .news-card {
+        height: 50vw;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .news-card {
+        width: 29.2vw;
+        height: 55vw;
+    }
+}
+
+@media screen and (max-width: 750px) {
+    .news-card {
+        width: 39vw;
+        height: 446px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .news-card {
+        width: 42vw;
+        height: 446px;
+    }
+}
+
+@media screen and (max-width: 550px) {
+    .news-card {
+        width: 288px;
+    }
+}

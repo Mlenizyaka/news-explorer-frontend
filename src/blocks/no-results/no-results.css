@@ -1,0 +1,14 @@
+@import url('./_is-opened/no-results_is-opened.css');
+@import url('./__image/no-results__image.css');
+@import url('./__title/no-results__title.css');
+@import url('./__subtitle/no-results__subtitle.css');
+
+.no-results {
+    width: 100%;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: #f5f6f7;
+
+}

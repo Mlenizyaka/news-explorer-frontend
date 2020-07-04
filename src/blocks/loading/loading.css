@@ -1,0 +1,13 @@
+@import url('./_is-opened/loading_is-opened.css');
+@import url('./__image/loading__image.css');
+@import url('./__title/loading__title.css');
+
+.loading {
+    width: 100%;
+    min-height: 282px;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: #f5f6f7;
+}
