@@ -1,16 +1,21 @@
+/* eslint-disable no-restricted-globals */
 /* eslint-disable func-names */
 /* eslint-disable prefer-promise-reject-errors */
 /* eslint-disable no-undef */
 import "./index.css";
 import Header from "./js/components/Header";
-// import Popup from "./js/components/Popup";
 import PopupAuth from "./js/components/PopupAuth";
 import PopupReg from "./js/components/PopupReg";
 import PopupSuccess from "./js/components/PopupSuccess";
-// import { getDateForApi } from './js/utils/dates';
+import { getDateForApi } from "./js/utils/dates";
+import renderLoading from "./js/utils/renderLoading";
+import saveAndDelete from "./js/utils/saveAndDelete";
+import NewsCard from "./js/components/NewsCard";
+import NewsCardList from "./js/components/NewsCardList";
 
 import MainApi from "./js/api/MainApi";
-// import NewsApi from "./js/api/NewsApi";
+import MAIN_API_DATA from "./js/constants/main-api";
+import NewsApi from "./js/api/NewsApi";
 
 import SearchForm from "./js/components/SearchForm";
 import FormValidation from "./js/components/FormValidation";
@@ -25,22 +30,20 @@ const popupReg = new PopupReg(document.querySelector('.popup_type_registration')
 const popupSuccess = new PopupSuccess(document.querySelector('.popup_type_registered'));
 const searchForm = new SearchForm(document.querySelector('.search'), formValidation);
 
-
-
-
 // Кнопки
 const headerAuthButton = document.querySelector('.authorization__button_not-authorized');
 const headerLogoutButton = document.querySelector('.authorization__button_authorized');
 const headerLogoutUsername = document.querySelector('.authorization__button_username');
 const savedArticlesLink = document.querySelector('.header__link_authorized');
-// const popupWayReg = document.querySelector('.popup__link_type_registration');
-// const popupClose = document.querySelector('.popup__close');
+const showMoreButton = document.querySelector('.news__show-more');
 
+const card = new NewsCard();
+const newsBlock = document.querySelector('.news');
+const newsList = document.querySelector('.news-list');
+const notFoundBlock = document.querySelector('.no-results');
 
 // API
-const api = new MainApi({
-  url: 'https://api.mlews.site',
-});
+const api = new MainApi(MAIN_API_DATA);
 
 const header = new Header({ isLoggedIn: true, userName: document.forms.authorization.elements.name });
 
@@ -92,7 +95,6 @@ popupAuth.form.addEventListener('submit', e => {
       popupAuth.container.classList.remove('popup_is-opened');
     })
     .then(() => {
-      //  article.renderIconAuth();
       api.getUserData()
         .then(res => {
           if (res.ok) {
@@ -103,18 +105,15 @@ popupAuth.form.addEventListener('submit', e => {
         .then((res) => {
           localStorage.setItem("name", res.name)
           headerLogoutUsername.textContent = res.name
-          // location.reload();
+          location.reload();
         })
         .catch((err) => {
           console.log('Ошибка', err.status)
         })
     })
-  /*
-.catch(err => commonAuthError.textContent = err)
-.finally(() => {
- loginFormClass.unlockButton(e.target);
- loginFormClass.unlockInputs(e.target)
-}) */
+    .catch((err) => {
+      console.log(err);
+    })
 });
 
 // валидация формы регистрации
@@ -143,12 +142,9 @@ popupReg.form.addEventListener('submit', e => {
       popupReg.container.classList.remove('popup_is-opened');
       popupSuccess.container.classList.add('popup_is-opened');
     })
-  /*
-  .catch(err => commonRegError.textContent = err)
-  .finally(() => {
-    registrationFormClass.unlockButton(event.target);
-    registrationFormClass.unlockInputs(event.target);
-  }) */
+    .catch((err) => {
+      console.log(err);
+    })
 });
 
 // выход из системы
@@ -160,26 +156,17 @@ headerLogoutButton.addEventListener('click', e => {
       }
       return Promise.reject(res);
     })
-    .then((res) => {
-      /* сохр статьи - скрыты
-      * кнопка с именем - скрыта
-      * кнопка авторизоваться - появилась
-      * инпут поиска новостей - очищен
-      *
-      * найденные статьи - стерты
-      * иконки статей:
-      * надпись войдите чтобы сохранить
-      * нет возможности сохранить
-      */
+    .then(() => {
       localStorage.clear();
+      location.reload();
       headerAuthButton.classList.remove('button_is-hidden');
       headerLogoutButton.classList.add('button_is-hidden');
       savedArticlesLink.classList.add('link_is-hidden');
       searchForm.clearInput();
+      newsBlock.classList.remove('news_is-opened');
     })
     .catch((err) => {
       console.log(err);
-      // alert(texts.errorPlusInternet);
     });
 })
 
@@ -189,26 +176,9 @@ searchForm.form.addEventListener('input', e => {
 });
 searchForm.form.addEventListener('submit', e => {
   e.preventDefault();
+  renderLoading(true);
 
-  const url = `https://newsapi.org/v2/everything?` +
-    `q=Apple&` +
-    `from=2020-06-18&` +
-    `sortBy=popularity&` +
-    `apiKey=ce6a234ec3974768af2db89e96451532`;
-
-  const req = new Request(url);
-
-  fetch(req)
-    .then(function (response) {
-      console.log(response.json());
-    })
-
-});
-
-  // console.log(newsApi);
-/*
-
-const startDate = new Date().toISOString().substr(0, 10);
+  const startDate = new Date().toISOString().substr(0, 10);
   const endDate = getDateForApi(7);
   const pageSize = 100;
 
@@ -221,11 +191,35 @@ const startDate = new Date().toISOString().substr(0, 10);
 
   newsApi.getNews()
     .then(res => {
-      if (res.ok) {
-        console.log(res.json);
-        // return res.json()
+      if (!res.ok) {
+        return Promise.reject(res)
       }
-      return Promise.reject(res)
+      return res.json()
     })
-*/
+    .then(res => {
+      const newsCardList = new NewsCardList(res.articles, newsList, 3);
+      newsCardList.removePreviousResults();
+      newsCardList.renderResults();
 
+      if (logged) {
+        console.log('logged');
+        card.renderIconLoggedIn();
+      } else {
+        console.log('not logged');
+        card.renderIconLoggedOut();
+      }
+
+      showMoreButton.addEventListener('click', () => {
+        newsCardList.renderResults.call(newsCardList);
+      })
+    })
+    .then(() => {
+      newsList.addEventListener('click', saveAndDelete);
+    })
+    .catch(() => {
+      notFoundBlock.classList.add('no-results_is-opened');
+    })
+    .finally(() => {
+      renderLoading(false);
+    })
+});

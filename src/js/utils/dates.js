@@ -6,7 +6,7 @@ function getDateForApi(days) {
   return currentDate.toISOString().substr(0, 10);
 }
 
-function getDateForArticles(date) {
+function getDateForCards(date) {
   return date.toLocaleString('ru', {
     year: 'numeric',
     month: 'long',
@@ -14,4 +14,4 @@ function getDateForArticles(date) {
   }).replace('г.', '');
 }
 
-export { getDateForApi, getDateForArticles }
+export { getDateForApi, getDateForCards }

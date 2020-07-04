@@ -1,5 +1,5 @@
 .news__show-more {
-    margin: 64px auto 80px auto;
+    margin: 64px auto 0 auto;
     width: 288px;
     height: 64px;
     background: #fff;
@@ -21,7 +21,7 @@
 
 @media screen and (max-width: 1440px) {
   .news__show-more {
-    margin: 4.4vw auto 5.5vw auto;
+    margin: 4.4vw auto 0 auto;
   }
 }
 
@@ -29,7 +29,6 @@
     .news__show-more {
         width: 240px;
         height: 56px;
-        margin-bottom: 5vw;
     }
 }
 
@@ -37,13 +36,11 @@
     .news__show-more {
         width: 240px;
         height: 56px;
-        margin-bottom: 5vw;
     }
 }
 
 @media screen and (max-width: 550px) {
     .news__show-more {
         width: 288px;
-        margin-bottom: 32px;
     }
 }

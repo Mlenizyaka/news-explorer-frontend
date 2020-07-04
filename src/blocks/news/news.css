@@ -1,10 +1,26 @@
 @import url('./__title/news__title.css');
 @import url('./__show-more/news__show-more.css');
 @import url('./_is-opened/news_is-opened.css');
+@import url('./__show-more/news__show-more_is-hidden.css');
 
 .news {
     background: #f5f6f7;
     padding-top: 80px;
+    padding-bottom: 80px;
     display: none;
     flex-direction: column;
+}
+
+@media screen and (max-width: 860px) {
+  .news {
+    padding-top: 70px;
+    padding-bottom: 70px;
+  }
+}
+
+@media screen and (max-width: 530px) {
+  .news {
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
 }

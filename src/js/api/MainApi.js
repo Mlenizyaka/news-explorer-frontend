@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 export default class MainApi {
   constructor(options) {
     this.url = options.url;
@@ -52,10 +53,10 @@ export default class MainApi {
     })
   }
 
-  getArticles(path) {
+  getSavedCards(path) {
     return fetch(`${this.url}${path}`, {
       method: 'GET',
-      credentials: "include",
+      // credentials: "include",
       headers: {
         "Content-Type": "application/json",
         authorization: `Bearer ${localStorage.getItem('token')}`,
@@ -66,7 +67,7 @@ export default class MainApi {
   createArticle(path, e) {
     return fetch(`${this.url}${path}`, {
       method: 'POST',
-      credentials: "include",
+      // credentials: "include",
       headers: {
         "Content-Type": "application/json",
         authorization: `Bearer ${localStorage.getItem('token')}`,
@@ -77,7 +78,7 @@ export default class MainApi {
         text: e.target.closest('.news-card').querySelector('.news-card__text').innerHTML,
         date: e.target.closest('.news-card').querySelector('.news-card__date').innerHTML,
         source: e.target.closest('.news-card').querySelector('.news-card__sourse').innerHTML,
-        link: e.target.closest('.news-card').href,
+        link: e.target.closest('.news-card__link').href,
         image: e.target.closest('.news-card').querySelector('.news-card__image').src,
       })
     })
@@ -86,7 +87,7 @@ export default class MainApi {
   removeArticle(path, e) {
     return fetch(`${this.url}${path}`, {
       method: 'DELETE',
-      credentials: "include",
+      // credentials: "include",
       headers: {
         "Content-Type": "application/json",
         authorization: `Bearer ${localStorage.getItem('token')}`,

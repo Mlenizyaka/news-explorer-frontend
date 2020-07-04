@@ -76,13 +76,13 @@ export default class FormValidation {
   _activateButton(e) {
     const button = e.currentTarget.querySelector('button');
     button.removeAttribute('disabled');
-    button.classList.add('popup__button_active');
+    button.classList.add('button_active');
   }
 
   _deactivateButton(e) {
     const button = e.currentTarget.querySelector('button');
     button.setAttribute('disabled', true);
-    button.classList.remove('popup__button_active');
+    button.classList.remove('button_active');
   }
 
   // валидно по всем признакам?

@@ -3,6 +3,7 @@
 @import url('./__icon_type_save/news-card__icon_type_save.css');
 @import url('./__icon/news-card__icon.css');
 @import url('./__tooltip/news-card__tooltip.css');
+@import url('./__tooltip/__tooltip_is-hidden/news-card__tooltip_is-hidden.css');
 @import url('./__tooltip-text/news-card__tooltip-text.css');
 @import url('./__article/news-card__article.css');
 @import url('./__date/news-card__date.css');

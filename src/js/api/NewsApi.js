@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 const apiKey = 'ce6a234ec3974768af2db89e96451532';
 
 export default class NewsApi {

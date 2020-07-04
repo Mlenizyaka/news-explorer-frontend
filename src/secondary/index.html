@@ -29,8 +29,10 @@
               <a class="link header__link header__link_type_black" href="#">Сохраненные статьи</a>
             </li>
             <li class="header__item">
-              <button class="button authorization__button">Грета <img class="authorization__image"
-                  src="../<%=require('../images/Exit-icon-black.png')%>" alt="Выйти"></button>
+              <button class="button authorization__button">
+                <span class="authorization__button_username"></span>
+                <img class="authorization__image" src="../<%=require('../images/Exit-icon-black.png')%>"
+                  alt="Выйти"></button>
             </li>
           </ul>
         </nav>
@@ -38,32 +40,23 @@
       <!--Блок приветствия пользователя-->
       <section class="user-data">
         <h4 class="user-data__subtitle">Сохранённые статьи</h4>
-        <h1 class="user-data__title">Грета, у вас 5 сохранённых статей</h1>
-        <h3 class="user-data__keywords">По ключевым словам: <span class="user-data__keyword">Природа, Тайга и 2
-            другим</span></h3>
+        <h1 class="user-data__title">
+          <span class="user-name"></span>, у вас <span class="amount-of-cards"></span>
+          <span class="phrase-ending"></span>
+        </h1>
+        <h3 class="user-data__keywords">По ключевым словам:
+          <span class="user-data__keyword user-data__main-keywords"></span>
+          <span class="user-data__keyword user-data__other-keywords"></span></h3>
       </section>
-      <!--Сохраненные статьи пользователя-->
+      <section class="no-results">
+        <!--добавить класс no-results_is-opened чтобы посмотреть-->
+        <div class="no-results__image"></div>
+        <h4 class="no-results__title">Ничего не найдено</h4>
+        <h5 class="no-results__subtitle">К сожалению по вашему запросу ничего не найдено.</h5>
+      </section>
+      <!--Сохраненные статьи пользователя saved-news_is-hidden-->
       <section class="saved-news">
         <div class="news-list">
-          <!--Пример карточки-->
-          <div class="news-card">
-            <div class="news-card__image"></div>
-            <div class="news-card__keyword">
-              <p class="news-card__keyword-text">Природа</p>
-            </div>
-            <button class="news-card__icon news-card__icon_type_delete" type="button"></button>
-            <div class="news-card__tooltip">
-              <p class="news-card__tooltip-text">Убрать из сохранённых</p>
-            </div>
-            <div class="news-card__article">
-              <span class="news-card__date">2 августа, 2019</span>
-              <h3 class="news-card__title">Национальное достояние – парки</h3>
-              <p class="news-card__text">В 2016 году Америка отмечала важный юбилей: сто лет назад здесь
-                начала складываться система национальных парков – охраняемых территорий, где и сегодня
-                каждый может приобщиться к природе.</p>
-              <p class="news-card__sourse">Лента.ру</p>
-            </div>
-          </div>
         </div>
       </section>
       <!--Блок футер-->

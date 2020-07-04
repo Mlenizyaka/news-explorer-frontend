@@ -6,10 +6,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="author" content="Анастасия Логинова">
   <meta name="description" content="NewsExplorer - поисковик новостей по ключевым словам">
-  <!--link rel="icon" href="./images/favicon.svg" type="image/svg" sizes="16x16"-->
   <link rel="icon" href="<%=require('./images/favicon.svg')%>" type="image/svg" sizes="16x16">
   <title>NewsExplorer</title>
-  <!--link rel="stylesheet" href="./index.css"-->
   <link rel="stylesheet" href="<%=htmlWebpackPlugin.files.chunks.main.css %>">
 </head>
 
@@ -32,10 +30,8 @@
                   статьи</a>
               </li>
               <li class="header__item">
-                <!--button class="button button_is-hidden authorization__button authorization__button_authorized">
+                <button class="button button_is-hidden authorization__button authorization__button_authorized">
                   <span class="authorization__button_username"></span>
-                  <img class="authorization__image" src="./images/Exit-icon-white.png" alt="Выйти"></button-->
-                <button class="button authorization__button authorization__button_authorized">Грета
                   <img class="authorization__image" src="<%=require('./images/Exit-icon-white.png')%>"
                     alt="Выйти"></button>
               </li>
@@ -52,10 +48,11 @@
           <h3 class="search__subtitle">Находите самые свежие статьи на любую тему и сохраняйте в своём
             личном
             кабинете.</h3>
-          <form class="form search__form">
+          <form class="form search__form" name="search">
             <div class="search__container">
               <input class="search__input" type="text" name="search" minlength="2" maxlength="40"
                 placeholder="Введите тему новости" required>
+              <!--добавить к search__button класс search__button_active чтобы посмотреть активную версию кнопки-->
               <button class="button search__button" type="submit" name="submit">Искать</button>
             </div>
             <span class="error-message error-message_type_search" id="search"></span>
@@ -77,62 +74,14 @@
       </section>
       <!--Результаты поиска, список новостей-->
       <!--добавить класс news_is-opened чтобы посмотреть-->
-      <section class="news news_is-opened">
+      <section class="news">
         <h2 class="news__title">Результаты поиска</h2>
         <div class="news-list">
-          <!--Пример карточки-->
-          <div class="news-card">
-            <div class="news-card__image"></div>
-            <button class="news-card__icon news-card__icon_type_save" type="button"></button>
-            <div class="news-card__tooltip">
-              <p class="news-card__tooltip-text">Войдите, чтобы сохранять статьи</p>
-            </div>
-            <div class="news-card__article">
-              <span class="news-card__date">2 августа, 2019</span>
-              <h3 class="news-card__title">Национальное достояние – парки</h3>
-              <p class="news-card__text">В 2016 году Америка отмечала важный юбилей: сто лет назад здесь
-                начала складываться система национальных парков – охраняемых территорий, где и сегодня
-                каждый может приобщиться к природе.</p>
-              <p class="news-card__sourse">Лента.ру</p>
-            </div>
-          </div>
-          <div class="news-card">
-            <div class="news-card__image"></div>
-            <button class="news-card__icon news-card__icon_type_save" type="button"></button>
-            <div class="news-card__tooltip">
-              <p class="news-card__tooltip-text">Войдите, чтобы сохранять статьи</p>
-            </div>
-            <div class="news-card__article">
-              <span class="news-card__date">2 августа, 2019</span>
-              <h3 class="news-card__title">Лесные огоньки: история одной фотографии</h3>
-              <p class="news-card__text">Фотограф отвлеклась от освещения суровой политической реальности
-                Мексики, чтобы запечатлеть ускользающую красоту одного
-                из местных чудес природы.</p>
-              <p class="news-card__sourse">Медуза</p>
-            </div>
-          </div>
-          <div class="news-card">
-            <div class="news-card__image"></div>
-            <button class="news-card__icon news-card__icon_type_save" type="button"></button>
-            <div class="news-card__tooltip">
-              <p class="news-card__tooltip-text">Войдите, чтобы сохранять статьи</p>
-            </div>
-            <div class="news-card__article">
-              <span class="news-card__date">2 августа, 2019</span>
-              <h3 class="news-card__title">«Первозданная тайга»: новый фотопроект Игоря Шпиленка</h3>
-              <p class="news-card__text">Знаменитый фотограф снимает первозданные леса России, чтобы
-                рассказать о необходимости их сохранения. В этот раз он отправился в Двинско-Пинежскую
-                тайгу, где...
-              </p>
-              <p class="news-card__sourse">Риа</p>
-            </div>
-          </div>
         </div>
-        <button class="news__show-more" type="button">Показать еще</button>
+        <button class="news__show-more news__show-more_is-hidden" type="button">Показать еще</button>
       </section>
       <!--Об авторе-->
       <section class="author">
-        <!--img class="author__avatar" src="./images/image-03.png" alt="Портрет автора"-->
         <img class="author__avatar" src="<%=require('./images/image-03.png')%>" alt="Портрет автора">
         <h2 class="author__title">Об авторе</h2>
         <div class="author__article">
@@ -147,7 +96,6 @@
       <div class="popup popup_type_authorization">
         <!--добавить к popup класс popup_is-opened чтобы посмотреть-->
         <div class="popup__content">
-          <!--img src="./images/close.svg" alt="Закрыть окно" class="popup__close"-->
           <img src="<%=require('./images/close.svg')%>" alt="Закрыть окно" class="popup__close">
           <h3 class="popup__title">Вход</h3>
           <form class="form popup__form form__authorization" name="authorization" id="authorization" novalidate>
@@ -203,7 +151,6 @@
       <div class="popup popup_type_registered">
         <!--добавить к popup класс popup_is-opened чтобы посмотреть-->
         <div class="popup__content">
-          <!--img src="./images/close.svg" alt="Закрыть окно" class="popup__close"-->
           <img src="<%=require('./images/close.svg')%>" alt="Закрыть окно" class="popup__close">
           <h3 class="popup__title">Пользователь успешно зарегистрирован!</h3>
           <p class="popup__link popup__link_type_authorization">Выполнить вход</p>
@@ -221,14 +168,10 @@
               <a class="link footer__link" href="https://praktikum.yandex.ru/web/" target="_blank">Яндекс.Практикум</a>
             </li>
             <li class="footer__item">
-              <!--a class="footer__link" href="https://github.com/Mlenizyaka" target="_blank"><img
-                  class="footer__social-icon" src="./images/Vector-GH.svg" alt="GitHub"></a-->
               <a class="footer__link" href="https://github.com/Mlenizyaka" target="_blank"><img
                   class="footer__social-icon" src="<%=require('./images/Vector-GH.svg')%>" alt="GitHub"></a>
             </li>
             <li class="footer__item">
-              <!--a class="footer__link" href="https://www.facebook.com/profile.php?id=100002918287725"
-                target="_blank"><img class="footer__social-icon" src="./images/Vector-FB.svg" alt="Facebook"></a-->
               <a class="footer__link" href="https://www.facebook.com/profile.php?id=100002918287725"
                 target="_blank"><img class="footer__social-icon" src="<%=require('./images/Vector-FB.svg')%>"
                   alt="Facebook"></a>
@@ -238,19 +181,6 @@
       </footer>
     </div>
   </div>
-  <!--script src="./js/components/Header.js"></script>
-  <script src="./js/components/Popup.js"></script>
-  <script src="./js/components/PopupAuth.js"></script>
-  <script src="./js/components/PopupReg.js"></script>
-  <script src="./js/components/PopupSuccess.js"></script>
-  <script src="./js/components/SearchForm.js"></script>
-  <script src="./js/components/FormValidation.js"></script>
-  <script src="./js/api/MainApi.js"></script>
-  <script src="./js/components/NewsCard.js"></script>
-  <script src="./js/components/NewsCardList.js"></script>
-  <script src="./js/utils/dates.js"></script>
-  <script src="./js/api/NewsApi.js"></script>
-  <script src="./index.js"></script-->
   <script src="<%= htmlWebpackPlugin.files.chunks.main.entry %>"></script>
 </body>
 

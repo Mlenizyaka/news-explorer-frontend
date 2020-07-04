@@ -8,6 +8,6 @@
 
 /*закрепление синего цвета иконки по клику будет реализовано на js,
 * сейчас свойство использовано в качестве примера, как это должно выглядеть*/
-.news-card__icon_type_save:active {
+.news-card__icon_type_saved {
     background: url(../../../images/save-icon_marked.png) center no-repeat;
 }
