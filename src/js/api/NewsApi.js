@@ -10,7 +10,7 @@ export default class NewsApi {
   }
 
   getNews() {
-    return fetch(`https://newsapi.org/v2/everything?q=${this.q}&from=${this.from}&to=${this.to}&pageSize=${this.pageSize}&apiKey=${apiKey}`)
+    return fetch(`https://praktikum.tk/news/v2/everything?q=${this.q}&from=${this.from}&to=${this.to}&pageSize=${this.pageSize}&apiKey=${apiKey}`)
   }
 
 }
